@@ -28,7 +28,7 @@
         "docs": "https://docs.typo3.org/p/liquidlight/typo3-call-to-actions/master/en-us/"
     },
     "require": {
-        "typo3/cms-core": "^11.5"
+        "typo3/cms-core": "^11.5 || ^12.4"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.48",
