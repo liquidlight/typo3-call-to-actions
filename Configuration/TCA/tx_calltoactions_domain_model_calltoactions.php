@@ -1,9 +1,9 @@
 <?php
 
-use LiquidLight\CallToActions\Userfunc\Tca;
 use LiquidLight\CallToActions\Backend\CallToActionItemsProcFunc;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use LiquidLight\CallToActions\Userfunc\Tca;
 use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 return [
 	'ctrl' => [

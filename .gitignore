@@ -1,7 +1,3 @@
-._*
-.DS_Store
-.vscode
-
-vendor/
-
-*GENERATED*
+.cache/
+.Build
+composer.lock

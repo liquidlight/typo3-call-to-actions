@@ -11,14 +11,13 @@
 
 namespace LiquidLight\CallToActions\Hooks\PageLayoutView;
 
-use TYPO3\CMS\Backend\View\PageLayoutView;
 use LiquidLight\CallToActions\Userfunc\Tca;
-
+use TYPO3\CMS\Backend\View\PageLayoutView;
 use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Service\FlexFormService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Contains a preview rendering for the page module of CType="text"
@@ -71,7 +70,6 @@ class CallToActionsElementPreviewRenderer implements PageLayoutViewDrawItemHookI
 	 * Generates a list of records selected on the Call To Action
 	 *
 	 * @param  array $row Record row of tt_content
-	 * @return string
 	 */
 	protected function generatePreview(array $row): string
 	{

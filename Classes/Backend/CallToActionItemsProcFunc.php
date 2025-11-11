@@ -14,8 +14,8 @@
 namespace LiquidLight\CallToActions\Backend;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class CallToActionItemsProcFunc
 {
@@ -24,7 +24,6 @@ class CallToActionItemsProcFunc
 	 *
 	 * Load the defined classes from setup.ts
 	 *
-	 * @return array
 	 */
 	public function getConfig(): array
 	{
@@ -39,8 +38,6 @@ class CallToActionItemsProcFunc
 	 *
 	 * Use the key to generate an array of classes defined in Typoscript
 	 *
-	 * @param  string $key
-	 * @return array
 	 */
 	public function getClasses(string $key): array
 	{
