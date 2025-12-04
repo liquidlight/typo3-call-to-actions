@@ -3,7 +3,7 @@
     "description": "Shared Call to Action repository and plugin, to allow display of your CTAs",
     "license": "GPL-2.0+",
     "type": "typo3-cms-extension",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "keywords": [
         "TYPO3 CMS",
         "CTAs",

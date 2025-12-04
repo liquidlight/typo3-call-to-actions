@@ -1,3 +1,12 @@
+# 2.1.0
+
+**4th December 2025**
+
+#### Dependencies
+
+- Add TYPO3 v12 compatibility (#6)
+
+
 # 2.0.1
 
 **13th March 2024**
