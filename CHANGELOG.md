@@ -1,3 +1,11 @@
+# 2.1.1
+
+**19th December 2025**
+
+#### Fix
+
+- Remove depreciated object manager class (#8)
+
 # 2.1.0
 
 **4th December 2025**
