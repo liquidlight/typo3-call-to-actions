@@ -15,7 +15,6 @@ namespace LiquidLight\CallToActions\Backend;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class CallToActionItemsProcFunc
 {
@@ -27,8 +26,7 @@ class CallToActionItemsProcFunc
 	 */
 	public function getConfig(): array
 	{
-		$objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-		$configurationManager = $objectManager->get(ConfigurationManagerInterface::class);
+		$configurationManager = GeneralUtility::makeInstance(ConfigurationManagerInterface::class);
 		$setup = $configurationManager->getConfiguration(ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
 		return $setup['tt_content.']['call_to_actions.']['classes.'] ?? [];
 	}
