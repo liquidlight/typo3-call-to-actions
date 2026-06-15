@@ -15,7 +15,7 @@ return [
 		'origUid' => 't3_origuid',
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
-		'transOrigDiffSourceField' => 'l10n_diff',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
 		'default_sortby' => 'ORDER BY title ASC',
 		'delete' => 'deleted',
 		'enablecolumns' => [
@@ -207,8 +207,7 @@ return [
 				fe_group,
 			--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
 				sys_language_uid,
-				l10n_parent,
-				l10n_diff
+				l10n_parent
 			',
 			'columnsOverrides' => [
 				'content' => [
