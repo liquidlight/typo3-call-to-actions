@@ -11,6 +11,3 @@ defined('TYPO3') or die();
 	'setup',
 	"@import 'EXT:call_to_actions/Configuration/TypoScript/setup.typoscript'"
 );
-
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['liquidlight_call_to_actions'] =
-	\LiquidLight\CallToActions\Hooks\PageLayoutView\CallToActionsElementPreviewRenderer::class;
