@@ -7,7 +7,7 @@ use TYPO3\CMS\Core\SingletonInterface;
 
 class Tca implements SingletonInterface
 {
-	public function getCallToActionLabel(&$parameters, $parentObject = [])
+	public function getCallToActionLabel(&$parameters, $parentObject = []): void
 	{
 		$type = $parameters['row']['type'] ?? false;
 		$type = ucfirst(is_array($type) ? $type[0] : $type);

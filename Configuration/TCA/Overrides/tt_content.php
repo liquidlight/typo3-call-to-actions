@@ -9,9 +9,9 @@ call_user_func(function () {
 		'tt_content',
 		'CType',
 		[
-			'LLL:EXT:call_to_actions/Resources/Private/Language/locallang.xlf:wizard.title',
-			'call_to_actions',
-			'liquidlight_call_to_actions',
+			'label' => 'LLL:EXT:call_to_actions/Resources/Private/Language/locallang.xlf:wizard.title',
+			'value' => 'call_to_actions',
+			'icon' => 'liquidlight_call_to_actions',
 		],
 		'list',
 		'after'

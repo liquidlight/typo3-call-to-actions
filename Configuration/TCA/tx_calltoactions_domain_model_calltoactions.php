@@ -3,7 +3,6 @@
 use LiquidLight\CallToActions\Backend\CallToActionItemsProcFunc;
 use LiquidLight\CallToActions\Userfunc\Tca;
 use TYPO3\CMS\Core\Resource\File;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 return [
 	'ctrl' => [
@@ -12,7 +11,6 @@ return [
 		'label_userFunc' => Tca::class . '->getCallToActionLabel',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
-		'cruser_id' => 'cruser_id',
 		'versioningWS' => true,
 		'origUid' => 't3_origuid',
 		'languageField' => 'sys_language_uid',
@@ -55,7 +53,7 @@ return [
 				'renderType' => 'selectSingle',
 				'default' => 0,
 				'items' => [
-					['', 0],
+					['label' => '', 'value' => 0],
 				],
 				'foreign_table' => 'tx_calltoactions_domain_model_calltoactions',
 				'foreign_table_where' => 'AND {#tx_calltoactions_domain_model_calltoactions}.{#pid}=###CURRENT_PID### AND {#tx_calltoactions_domain_model_calltoactions}.{#sys_language_uid} IN (-1,0)',
@@ -82,8 +80,7 @@ return [
 				'renderType' => 'checkboxToggle',
 				'items' => [
 					[
-						0 => '',
-						1 => '',
+						'label' => '',
 						'invertStateDisplay' => true,
 					],
 				],
@@ -97,7 +94,8 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'required,trim',
+				'eval' => 'trim',
+				'required' => true,
 			],
 		],
 
@@ -141,13 +139,9 @@ return [
 		'url' => [
 			'label' => 'LLL:EXT:call_to_actions/Resources/Private/Language/locallang.xlf:url',
 			'config' => [
-				'type' => 'input',
-				'renderType' => 'inputLink',
-				'softref' => 'typolink',
+				'type' => 'link',
 				'size' => 30,
-				'max' => 255,
 				'checkbox' => '',
-				'eval' => 'trim',
 			],
 		],
 		'button' => [
@@ -162,13 +156,14 @@ return [
 		'image' => [
 			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:call_to_actions/Resources/Private/Language/locallang.xlf:image',
-			'config' => ExtensionManagementUtility::getFileFieldTCAConfig('image', [
+			'config' => [
+				'type' => 'file',
+				'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
 				'appearance' => [
 					'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
 				],
 				'maxitems' => 1,
 				'size' => 1,
-
 				'overrideChildTca' => ['types' => [
 					File::FILETYPE_IMAGE => [
 						'showitem' => '
@@ -176,7 +171,7 @@ return [
 						--palette--;;filePalette',
 					],
 				]],
-			], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
+			],
 		],
 
 	],

@@ -40,7 +40,7 @@ class CallToActionsElementPreviewRenderer implements PageLayoutViewDrawItemHookI
 		&$headerContent,
 		&$itemContent,
 		array &$row
-	) {
+	): void {
 		// Is this a call_to_Actions plugin?
 		if ($row['CType'] === 'call_to_actions') {
 			// Generate the list of CTAs
@@ -82,18 +82,13 @@ class CallToActionsElementPreviewRenderer implements PageLayoutViewDrawItemHookI
 		;
 		$records = $queryBuilder
 			->select('uid', 'label', 'type', 'theme')
-			->from('tx_calltoactions_domain_model_calltoactions')
-			->where(
-				$queryBuilder->expr()->in(
-					'uid',
-					$queryBuilder->createNamedParameter(
-						GeneralUtility::intExplode(',', $row['records']),
-						Connection::PARAM_INT_ARRAY
-					)
+			->from('tx_calltoactions_domain_model_calltoactions')->where($queryBuilder->expr()->in(
+				'uid',
+				$queryBuilder->createNamedParameter(
+					GeneralUtility::intExplode(',', $row['records']),
+					Connection::PARAM_INT_ARRAY
 				)
-			)
-			->execute()
-			->fetchAll()
+			))->executeQuery()->fetchAllAssociative()
 		;
 
 		// Check if we have some
@@ -117,9 +112,7 @@ class CallToActionsElementPreviewRenderer implements PageLayoutViewDrawItemHookI
 			$content .= '<li>' . htmlspecialchars($parameters['title']) . '</li>';
 		}
 
-		$content .= '</ul>';
-
 		// Return the preview content
-		return $content;
+		return $content . '</ul>';
 	}
 }
