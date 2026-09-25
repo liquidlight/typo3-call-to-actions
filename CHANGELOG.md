@@ -1,3 +1,16 @@
+# 3.0.0
+
+**25th September 2026**
+
+#### Refactor
+
+- Replace the removed `tt_content_drawItem` hook with the `PageContentPreviewRenderingEvent` PSR-14 event for the page module preview (#10)
+
+#### Dependencies
+
+- Add TYPO3 v13 compatibility (#10)
+- Drop TYPO3 v11 compatibility (#10)
+
 # 2.1.1
 
 **19th December 2025**
