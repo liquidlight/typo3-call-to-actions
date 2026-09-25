@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  LiquidLight\CallToActions\:
+    resource: '../Classes/*'
+
+  LiquidLight\CallToActions\EventListener\CallToActionsPreviewRenderingEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'call-to-actions/page-content-preview-rendering'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent

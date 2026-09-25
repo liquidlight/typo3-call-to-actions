@@ -61,7 +61,7 @@ class CallToActionItemsProcFunc
 	 *
 	 * @param array &$config configuration array
 	 */
-	public function getTypeClasses(array &$config)
+	public function getTypeClasses(array &$config): void
 	{
 		$config['items'] = $this->getClasses('type.');
 	}
@@ -73,7 +73,7 @@ class CallToActionItemsProcFunc
 	 *
 	 * @param array &$config configuration array
 	 */
-	public function getThemeClasses(array &$config)
+	public function getThemeClasses(array &$config): void
 	{
 		$config['items'] = $this->getClasses('theme.');
 	}
